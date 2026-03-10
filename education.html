@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education | Kundan Kumar Gupta</title>
+  <meta name="description" content="Academic qualifications and achievements of Kundan Kumar Gupta" />
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/src/css/main.css" />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header / Navigation -->
+  <header class="header" role="banner">
+    <div class="header-content">
+      <a href="/" class="logo" aria-label="Kundan Kumar Gupta - Home">
+        Kundan <span class="logo-accent">Kumar</span>
+      </a>
+      
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/skills.html" class="nav-link">Skills</a></li>
+          <li><a href="/projects.html" class="nav-link">Projects</a></li>
+          <li><a href="/experience.html" class="nav-link">Experience</a></li>
+          <li><a href="/education.html" class="nav-link active" aria-current="page">Education</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+          <li><a href="/cv-download.html" class="nav-link">Download CV</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Toggle between light and dark theme" title="Switch theme">
+          <span class="sr-only">Toggle between light and dark theme</span>
+          <div class="toggle-slider" aria-hidden="true"></div>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="sr-only">Open mobile menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <span class="logo" aria-label="Kundan Portfolio">Kundan<span class="logo-accent">Portfolio</span></span>
+        <button class="mobile-nav-close" aria-label="Close mobile menu">
+          <span class="sr-only">Close mobile menu</span>
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about.html" class="nav-link">About</a></li>
+        <li><a href="/skills.html" class="nav-link">Skills</a></li>
+        <li><a href="/projects.html" class="nav-link">Projects</a></li>
+        <li><a href="/experience.html" class="nav-link">Experience</a></li>
+        <li><a href="/education.html" class="nav-link active" aria-current="page">Education</a></li>
+        <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        <li><a href="/cv-download.html" class="nav-link">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main" class="main" role="main">
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">Education</h1>
+        <p class="page-subtitle">Academic qualifications and achievements</p>
+      </div>
+    </section>
+
+    <!-- Education Timeline -->
+    <section class="section">
+      <div class="container">
+        <div id="education-timeline" class="timeline-container">
+          <!-- Timeline will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h3 class="footer-title">Kundan Kumar Gupta</h3>
+          <p class="footer-description">Full-Stack Developer | AI/ML Engineer | Problem Solver</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Home</a></li>
+            <li><a href="/about.html" class="footer-link">About</a></li>
+            <li><a href="/projects.html" class="footer-link">Projects</a></li>
+            <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3 class="footer-title">Contact Me</h3>
+          <ul class="footer-contact">
+            <li><a href="mailto:kumarkundan5223@gmail.com" class="footer-link">📧 kumarkundan5223@gmail.com</a></li>
+            <li><a href="tel:+919709342021" class="footer-link">📱 +91 9709342021</a></li>
+            <li><a href="https://github.com/kundankumar24" target="_blank" rel="noopener noreferrer" class="footer-link">💻 GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/kundan-kumar-gupta-193a51266" target="_blank" rel="noopener noreferrer" class="footer-link">💼 LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-text">© 2026 Kundan Kumar Gupta. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Module for theme, navigation, etc. -->
+  <script type="module" src="/src/js/main.js"></script>
+  
+  <!-- Education Page Script -->
+  <script type="module">
+    import { getExperiencesByType, formatDate, calculateDuration } from '/src/js/config/experienceData.js'
+    
+    function escapeHtml(text) {
+      const div = document.createElement('div')
+      div.textContent = text
+      return div.innerHTML
+    }
+    
+    function renderEducation() {
+      const container = document.getElementById('education-timeline')
+      if (!container) return
+      
+      const education = getExperiencesByType('education')
+      
+      if (!education || education.length === 0) {
+        container.innerHTML = '<p>No education information available</p>'
+        return
+      }
+      
+      const timeline = document.createElement('div')
+      timeline.className = 'timeline'
+      
+      education.forEach((edu) => {
+        const item = document.createElement('div')
+        item.className = 'timeline-item'
+        
+        const duration = calculateDuration(edu.startDate, edu.endDate)
+        const startDateStr = formatDate(edu.startDate)
+        const endDateStr = edu.current ? 'Present' : formatDate(edu.endDate)
+        
+        item.innerHTML = `
+          <div class="timeline-marker"></div>
+          <div class="timeline-content card">
+            <div class="timeline-header">
+              <div class="timeline-title-group">
+                <h3 class="timeline-title">${escapeHtml(edu.degree)}</h3>
+                <p class="timeline-company">${escapeHtml(edu.institution)}</p>
+                ${edu.field ? `<p class="timeline-field">${escapeHtml(edu.field)}</p>` : ''}
+              </div>
+              <div class="timeline-date-group">
+                <span class="timeline-date">${startDateStr} - ${endDateStr}</span>
+                <span class="timeline-duration">${duration}</span>
+                ${edu.location ? `<span class="timeline-location">📍 ${escapeHtml(edu.location)}</span>` : ''}
+              </div>
+            </div>
+            
+            ${edu.grade ? `<p class="timeline-grade"><strong>${escapeHtml(edu.grade)}</strong></p>` : ''}
+            
+            <p class="timeline-description">${escapeHtml(edu.description)}</p>
+            
+            ${edu.achievements && edu.achievements.length > 0 ? `
+              <div class="timeline-achievements">
+                <h4>Key Achievements:</h4>
+                <ul>
+                  ${edu.achievements.map(achievement => `<li>${escapeHtml(achievement)}</li>`).join('')}
+                </ul>
+              </div>
+            ` : ''}
+            
+            ${edu.current ? '<span class="current-badge badge primary">Current</span>' : ''}
+          </div>
+        `
+        
+        // Make item visible immediately
+        item.style.opacity = '1'
+        
+        timeline.appendChild(item)
+      })
+      
+      container.innerHTML = ''
+      container.appendChild(timeline)
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderEducation)
+    } else {
+      renderEducation()
+    }
+  </script>
+</body>
+</html>

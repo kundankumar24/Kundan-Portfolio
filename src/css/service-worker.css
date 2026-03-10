@@ -1,0 +1,307 @@
+/**
+ * Service Worker Notification Styles
+ * Styles for PWA notifications and offline indicators
+ */
+
+/* Service Worker Notifications */
+.sw-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  max-width: 400px;
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-md);
+  z-index: 10000;
+  animation: slideInUp 0.3s ease-out;
+  border-left: 4px solid var(--color-primary);
+}
+
+.sw-notification--success {
+  border-left-color: var(--color-success, #10b981);
+}
+
+.sw-notification--warning {
+  border-left-color: var(--color-warning, #f59e0b);
+}
+
+.sw-notification--error {
+  border-left-color: var(--color-error, #ef4444);
+}
+
+.sw-notification--info {
+  border-left-color: var(--color-info, #3b82f6);
+}
+
+.sw-notification__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  padding-right: var(--spacing-lg);
+}
+
+.sw-notification__title {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.sw-notification__message {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+
+.sw-notification__actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.sw-notification__action {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sw-notification__action:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.sw-notification__action:active {
+  transform: translateY(0);
+}
+
+.sw-notification__close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-sm);
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.sw-notification__close:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+/* Offline Indicator */
+.offline-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-warning, #f59e0b);
+  color: white;
+  padding: var(--spacing-sm);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  z-index: 9999;
+  animation: slideInDown 0.3s ease-out;
+}
+
+.offline-indicator__icon {
+  display: inline-block;
+  margin-right: var(--spacing-xs);
+}
+
+/* Online Indicator (temporary) */
+.online-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-success, #10b981);
+  color: white;
+  padding: var(--spacing-sm);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  z-index: 9999;
+  animation: slideInDown 0.3s ease-out;
+}
+
+/* PWA Install Prompt */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 500px;
+  width: calc(100% - 40px);
+  background: var(--color-surface);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-lg);
+  z-index: 10000;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.pwa-install-prompt__content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.pwa-install-prompt__icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.pwa-install-prompt__text {
+  flex: 1;
+}
+
+.pwa-install-prompt__title {
+  margin: 0 0 var(--spacing-xs) 0;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.pwa-install-prompt__description {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.pwa-install-prompt__actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.pwa-install-prompt__button {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pwa-install-prompt__button--primary {
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+
+.pwa-install-prompt__button--primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.pwa-install-prompt__button--secondary {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.pwa-install-prompt__button--secondary:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text-primary);
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sw-notification {
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+
+  .pwa-install-prompt {
+    bottom: 10px;
+    width: calc(100% - 20px);
+  }
+
+  .pwa-install-prompt__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pwa-install-prompt__actions {
+    flex-direction: column;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .sw-notification,
+  .offline-indicator,
+  .online-indicator,
+  .pwa-install-prompt {
+    animation: none;
+  }
+
+  .sw-notification__action:hover {
+    transform: none;
+  }
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  .sw-notification {
+    background: var(--color-surface-dark, #1f2937);
+  }
+
+  .offline-indicator {
+    background: var(--color-warning-dark, #d97706);
+  }
+
+  .online-indicator {
+    background: var(--color-success-dark, #059669);
+  }
+
+  .pwa-install-prompt {
+    background: var(--color-surface-dark, #1f2937);
+  }
+}

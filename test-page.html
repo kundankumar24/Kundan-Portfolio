@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test Page</title>
+  <link rel="stylesheet" href="/src/css/main.css" />
+</head>
+<body>
+  <h1>Test Page</h1>
+  <div id="skills-showcase">
+    <p>Loading skills...</p>
+  </div>
+
+  <script type="module">
+    import { initSkillsPage } from '/src/js/pages/skills.js'
+    
+    console.log('Test script loaded!')
+    console.log('Calling initSkillsPage...')
+    
+    try {
+      initSkillsPage()
+      console.log('initSkillsPage completed')
+    } catch (error) {
+      console.error('Error calling initSkillsPage:', error)
+    }
+  </script>
+</body>
+</html>

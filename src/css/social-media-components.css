@@ -1,0 +1,416 @@
+/**
+ * Social Media Components Styles
+ * Styles for social media integration cards and feeds
+ */
+
+/* Social Media Grid */
+.social-media-grid {
+  display: grid;
+  gap: var(--spacing-lg, 2rem);
+  margin: var(--spacing-xl, 3rem) 0;
+}
+
+.social-media-grid--grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.social-media-grid--compact {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md, 1.5rem);
+}
+
+/* Social Media Card */
+.social-media-card {
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e0e0e0);
+  border-radius: var(--border-radius-lg, 12px);
+  padding: var(--spacing-lg, 2rem);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.social-media-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Platform-specific colors */
+.social-media-card--github {
+  border-top: 3px solid #333;
+}
+
+.social-media-card--linkedin {
+  border-top: 3px solid #0077b5;
+}
+
+.social-media-card--twitter {
+  border-top: 3px solid #1da1f2;
+}
+
+/* Card Header */
+.social-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md, 1rem);
+  margin-bottom: var(--spacing-lg, 1.5rem);
+  position: relative;
+}
+
+.social-card-avatar {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--color-border, #e0e0e0);
+}
+
+.social-card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.social-card-name {
+  font-size: var(--font-size-lg, 1.25rem);
+  font-weight: 600;
+  margin: 0 0 var(--spacing-xs, 0.25rem) 0;
+  color: var(--color-text-primary, #1a1a1a);
+}
+
+.social-card-username {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-secondary, #666);
+  margin: 0 0 var(--spacing-sm, 0.5rem) 0;
+}
+
+.social-card-headline {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-secondary, #666);
+  margin: var(--spacing-sm, 0.5rem) 0 0 0;
+  line-height: 1.4;
+}
+
+.social-card-bio {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-secondary, #666);
+  margin: var(--spacing-sm, 0.5rem) 0 0 0;
+  line-height: 1.5;
+}
+
+.social-card-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--color-text-secondary, #666);
+  transition: color 0.2s ease;
+  padding: var(--spacing-xs, 0.25rem);
+}
+
+.social-card-link:hover {
+  color: var(--color-primary, #007bff);
+}
+
+.social-card-link .icon {
+  display: block;
+}
+
+/* Card Stats */
+.social-card-stats {
+  display: flex;
+  gap: var(--spacing-lg, 1.5rem);
+  padding: var(--spacing-md, 1rem) 0;
+  border-top: 1px solid var(--color-border, #e0e0e0);
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+  margin-bottom: var(--spacing-lg, 1.5rem);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.stat-value {
+  font-size: var(--font-size-xl, 1.5rem);
+  font-weight: 700;
+  color: var(--color-text-primary, #1a1a1a);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-secondary, #666);
+  margin-top: var(--spacing-xs, 0.25rem);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Engagement Metrics */
+.social-card-engagement {
+  margin-bottom: var(--spacing-lg, 1.5rem);
+}
+
+.engagement-title {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text-primary, #1a1a1a);
+  margin: 0 0 var(--spacing-md, 1rem) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.engagement-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--spacing-md, 1rem);
+}
+
+.engagement-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-background, #f8f9fa);
+  border-radius: var(--border-radius-md, 8px);
+  text-align: center;
+}
+
+.engagement-icon {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs, 0.25rem);
+}
+
+.engagement-value {
+  font-size: var(--font-size-lg, 1.125rem);
+  font-weight: 700;
+  color: var(--color-text-primary, #1a1a1a);
+  margin-bottom: var(--spacing-xs, 0.25rem);
+}
+
+.engagement-label {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-secondary, #666);
+}
+
+/* Repositories Section */
+.social-card-repos {
+  margin-bottom: var(--spacing-lg, 1.5rem);
+}
+
+.repos-title {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text-primary, #1a1a1a);
+  margin: 0 0 var(--spacing-md, 1rem) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.repos-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md, 1rem);
+}
+
+.repo-item {
+  padding: var(--spacing-md, 1rem);
+  background: var(--color-background, #f8f9fa);
+  border-radius: var(--border-radius-md, 8px);
+  transition: background 0.2s ease;
+}
+
+.repo-item:hover {
+  background: var(--color-background-hover, #e9ecef);
+}
+
+.repo-name {
+  font-size: var(--font-size-md, 1rem);
+  font-weight: 600;
+  color: var(--color-primary, #007bff);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: var(--spacing-xs, 0.25rem);
+}
+
+.repo-name:hover {
+  text-decoration: underline;
+}
+
+.repo-description {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-secondary, #666);
+  margin: var(--spacing-xs, 0.25rem) 0;
+  line-height: 1.4;
+}
+
+.repo-meta {
+  display: flex;
+  gap: var(--spacing-md, 1rem);
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-secondary, #666);
+  margin-top: var(--spacing-sm, 0.5rem);
+}
+
+.repo-language {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs, 0.25rem);
+}
+
+.repo-stars,
+.repo-forks {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs, 0.25rem);
+}
+
+/* Activity Section */
+.social-card-activity {
+  margin-bottom: 0;
+}
+
+.activity-title {
+  font-size: var(--font-size-sm, 0.875rem);
+  font-weight: 600;
+  color: var(--color-text-primary, #1a1a1a);
+  margin: 0 0 var(--spacing-md, 1rem) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm, 0.5rem);
+}
+
+.activity-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs, 0.25rem);
+  padding: var(--spacing-sm, 0.5rem);
+  border-left: 2px solid var(--color-border, #e0e0e0);
+  padding-left: var(--spacing-md, 1rem);
+}
+
+.activity-description {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-primary, #1a1a1a);
+}
+
+.activity-repo {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-primary, #007bff);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.activity-repo:hover {
+  text-decoration: underline;
+}
+
+.activity-time {
+  font-size: var(--font-size-xs, 0.75rem);
+  color: var(--color-text-secondary, #666);
+}
+
+/* Dark Theme Support */
+@media (prefers-color-scheme: dark) {
+  .social-media-card {
+    background: var(--color-surface-dark, #1e1e1e);
+    border-color: var(--color-border-dark, #333);
+  }
+
+  .social-card-name,
+  .engagement-value,
+  .activity-description {
+    color: var(--color-text-primary-dark, #e0e0e0);
+  }
+
+  .social-card-username,
+  .social-card-bio,
+  .social-card-headline,
+  .stat-label,
+  .engagement-label,
+  .repo-description,
+  .repo-meta,
+  .activity-time {
+    color: var(--color-text-secondary-dark, #999);
+  }
+
+  .engagement-stat,
+  .repo-item {
+    background: var(--color-background-dark, #2a2a2a);
+  }
+
+  .repo-item:hover {
+    background: var(--color-background-hover-dark, #333);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .social-media-grid--grid,
+  .social-media-grid--compact {
+    grid-template-columns: 1fr;
+  }
+
+  .social-media-card {
+    padding: var(--spacing-md, 1.5rem);
+  }
+
+  .social-card-stats {
+    gap: var(--spacing-md, 1rem);
+  }
+
+  .engagement-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .repo-meta {
+    flex-wrap: wrap;
+  }
+}
+
+/* Loading State */
+.social-media-card--loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.social-media-card--loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-border, #e0e0e0);
+  border-top-color: var(--color-primary, #007bff);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Error State */
+.social-media-card--error {
+  border-color: var(--color-error, #dc3545);
+  background: var(--color-error-background, #fff5f5);
+}
+
+.social-media-card--error .social-card-header {
+  opacity: 0.5;
+}

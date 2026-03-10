@@ -1,0 +1,33 @@
+/* Main CSS Entry Point */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Import CSS Modules */
+@import './variables.css';
+@import './base.css';
+@import './typography.css';
+@import './components.css';
+@import './project-components.css';
+@import './skill-components.css';
+@import './lightbox.css';
+@import './image-optimization.css';
+@import './social-media-components.css';
+@import './social-sharing-components.css';
+@import './service-worker.css';
+@import './pwa-install.css';
+@import './accessibility.css';
+@import './layout.css';
+@import './animations.css';
+@import './utilities.css';
+@import './professional-enhancements.css';
+@import './experience-timeline.css';
+@import './achievements-certifications.css';
+@import './testimonial-components.css';
+@import './contact-components.css';
+@import './i18n.css';
+@import './back-to-top.css';
+
+/* Page-specific styles */
+@import './pages/projects.css';
+@import './pages/experience.css';

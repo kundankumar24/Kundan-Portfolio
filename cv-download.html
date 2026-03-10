@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Download CV | Kundan Kumar Gupta</title>
+  <link rel="stylesheet" href="/src/css/main.css" />
+  <style>
+    .cv-download-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .cv-download-container {
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      padding: 3rem;
+      background: var(--color-surface);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .cv-download-container h1 {
+      margin-bottom: 1rem;
+      color: var(--color-text-primary);
+    }
+    .cv-download-container p {
+      margin-bottom: 2rem;
+      color: var(--color-text-secondary);
+    }
+    .download-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .download-btn {
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .download-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .download-btn-pdf {
+      background: #e74c3c;
+      color: white;
+    }
+    .download-btn-pdf:hover:not(:disabled) {
+      background: #c0392b;
+      transform: translateY(-2px);
+    }
+    .icon {
+      width: 20px;
+      height: 20px;
+    }
+    .back-link {
+      margin-top: 2rem;
+      display: inline-block;
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section class="cv-download-section">
+    <div class="cv-download-container">
+      <h1>Download My CV/Resume</h1>
+      <p>Choose your preferred format to download my curriculum vitae</p>
+      
+      <div class="download-buttons">
+        <!-- Static PDF Download -->
+        <a href="/documents/Kundan_Kumar_Gupta_CV.pdf" download class="download-btn download-btn-pdf" style="text-decoration: none;">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+          </svg>
+          Download CV (PDF)
+        </a>
+      </div>
+
+      <a href="/" class="back-link">← Back to Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Main JavaScript Module -->
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

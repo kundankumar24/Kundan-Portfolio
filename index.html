@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio showcasing web development projects and skills" />
+  <meta name="theme-color" content="#6366f1" />
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png" />
+  
+  <!-- iOS Meta Tags -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Portfolio" />
+  
+  <title>KUNDAN | Portfolio</title>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/src/css/main.css" />
+  
+  <!-- Preconnect to external domains for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <!-- Header / Navigation -->
+  <header class="header" role="banner">
+    <div class="header-content">
+      <a href="#home" class="logo" aria-label="Your Portfolio - Home">
+        Kundan <span class="logo-accent">Kumar</span>
+      </a>
+      
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="/" class="nav-link active" aria-current="page" data-i18n="nav.home">Home</a></li>
+          <li><a href="/about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+          <li><a href="/skills.html" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="/projects.html" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="/experience.html" class="nav-link" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="/education.html" class="nav-link" data-i18n="nav.education">Education</a></li>
+          <li><a href="/contact.html" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="/cv-download.html" class="nav-link" data-i18n="nav.download">Download CV</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div id="language-switcher" class="language-switcher" role="navigation" aria-label="Language selection">
+          <button class="language-switcher-button" aria-haspopup="true" aria-expanded="false">
+            <span class="language-icon">🌐</span>
+            <span class="language-label">English</span>
+            <span class="language-arrow">▼</span>
+          </button>
+          <div class="language-dropdown" role="menu">
+            <button class="language-option active" data-language="en" role="menuitem" aria-current="true">English</button>
+            <button class="language-option" data-language="es" role="menuitem">Español</button>
+            <button class="language-option" data-language="fr" role="menuitem">Français</button>
+            <button class="language-option" data-language="de" role="menuitem">Deutsch</button>
+          </div>
+        </div>
+        
+        <button class="theme-toggle" aria-label="Toggle between light and dark theme" title="Switch theme">
+          <span class="sr-only">Toggle between light and dark theme</span>
+          <div class="toggle-slider" aria-hidden="true"></div>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Open mobile menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="sr-only">Open mobile menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-nav-content">
+      <div class="mobile-nav-header">
+        <span class="logo" aria-label="Your Portfolio">Your<span class="logo-accent">Portfolio</span></span>
+        <button class="mobile-nav-close" aria-label="Close mobile menu">
+          <span class="sr-only">Close mobile menu</span>
+          <span aria-hidden="true">✕</span>
+        </button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+        <li><a href="/about.html" class="nav-link">About</a></li>
+        <li><a href="/skills.html" class="nav-link">Skills</a></li>
+        <li><a href="/projects.html" class="nav-link">Projects</a></li>
+        <li><a href="/experience.html" class="nav-link">Experience</a></li>
+        <li><a href="/education.html" class="nav-link">Education</a></li>
+        <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        <li><a href="/cv-download.html" class="nav-link">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main" class="main" role="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero section" aria-labelledby="hero-title">
+      <div class="hero-background">
+        <div class="hero-gradient"></div>
+        <div class="hero-particles"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="hero-tagline animate-fade-in">Hello, I'm</p>
+            <h1 id="hero-title" class="hero-title animate-slide-up">Kundan Kumar Gupta</h1>
+            <h2 class="hero-subtitle animate-slide-up" style="animation-delay: 0.1s;">
+              <span class="typing-text">Full-Stack Developer</span>
+              <span class="text-separator">|</span>
+              <span class="typing-text">AI/ML Engineer</span>
+              <span class="text-separator">|</span>
+              <span class="typing-text">Problem Solver</span>
+            </h2>
+            <p class="hero-description animate-fade-in" style="animation-delay: 0.2s;">
+              B.Tech CSE student specializing in full-stack web development, AI/ML, and data structures. 
+              Solved 100+ LeetCode problems. Experienced with React, Python, TensorFlow, and cloud technologies.
+            </p>
+            <div class="hero-actions animate-fade-in" style="animation-delay: 0.3s;">
+              <a href="/projects.html" class="btn primary btn-glow">
+                <span>View Projects</span>
+                <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+              <a href="/contact.html" class="btn outline">
+                <span>Contact Me</span>
+              </a>
+            </div>
+            <div class="hero-stats animate-fade-in" style="animation-delay: 0.4s;">
+              <div class="stat-item">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Internships</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Certifications</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-image animate-float">
+            <div class="avatar-wrapper">
+              <div class="avatar-glow"></div>
+              <img src="/images/profile/avatar.jpg" alt="Kundan Kumar Gupta" class="avatar-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div class="avatar xl" role="img" aria-label="Profile avatar with initials KKG" style="display: none;">KKG</div>
+              <div class="avatar-ring"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="about-title" class="section-title">About Me</h2>
+          <p class="section-subtitle">Get to know me better</p>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p class="lead-text">
+              I'm a motivated B.Tech CSE student with expertise in full-stack web development, 
+              AI/ML, and data structures & algorithms.
+            </p>
+            <p>
+              Currently pursuing Computer Science Engineering at UCET, VBU with 8.0 CGPA. 
+              I've completed internships at IBM, EY, and Infosys Springboard, working on 
+              AI-powered solutions, full-stack applications, and banking analytics systems. 
+              Passionate about solving complex problems and building scalable applications.
+            </p>
+            <p style="margin-top: 1rem;">
+              With a strong foundation in both frontend and backend technologies, I specialize in 
+              creating seamless user experiences while ensuring robust server-side functionality. 
+              My experience spans across React, Node.js, Python, Java, and various AI/ML frameworks 
+              including TensorFlow and Scikit-learn.
+            </p>
+          </div>
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <div class="highlight-icon">💻</div>
+              <h3>Full-Stack Developer</h3>
+              <p>Proficient in React, Node.js, Python, and modern web technologies. Built multiple production-ready applications with responsive design and optimal performance.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🤖</div>
+              <h3>AI/ML Enthusiast</h3>
+              <p>Experience with TensorFlow, Scikit-learn, and predictive analytics. Developed AI-powered solutions for banking and e-commerce domains.</p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">🏆</div>
+              <h3>Problem Solver</h3>
+              <p>Solved 100+ LeetCode and 100+ GeeksforGeeks problems in Data Structures & Algorithms. Strong analytical and debugging skills.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Preview Section -->
+    <section class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Technical Expertise</h2>
+          <p class="section-subtitle">Technologies I work with</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">⚛️</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Frontend</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">React, JavaScript, HTML5, CSS3, Tailwind CSS</p>
+          </div>
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔧</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Backend</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Node.js, Express, Python, Java, REST APIs</p>
+          </div>
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🗄️</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Database</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">MongoDB, MySQL, PostgreSQL, Firebase</p>
+          </div>
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🤖</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">AI/ML</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">TensorFlow, Scikit-learn, Pandas, NumPy</p>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <a href="/skills.html" class="btn primary">View All Skills</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Highlight Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Professional Journey</h2>
+          <p class="section-subtitle">Internships and work experience</p>
+        </div>
+        <div style="display: grid; gap: 2rem; max-width: 900px; margin: 0 auto;">
+          <div class="card" style="padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--text-primary);">Full Stack Web Development Intern</h3>
+                <p style="color: var(--color-primary); font-weight: 600;">EY Global Delivery Services</p>
+              </div>
+              <span style="color: var(--text-muted); font-size: 0.9rem;">2025</span>
+            </div>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Completed comprehensive internship in collaboration with AICTE under the Next Gen Employability Program, focusing on modern web development practices and enterprise solutions.
+            </p>
+          </div>
+          
+          <div class="card" style="padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--text-primary);">AI & Cloud Intern</h3>
+                <p style="color: var(--color-primary); font-weight: 600;">IBM Skills Build</p>
+              </div>
+              <span style="color: var(--text-muted); font-size: 0.9rem;">2025</span>
+            </div>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Leveraged IBM Cloud Platform and Skills Build to work on emerging technologies in AI and Cloud Computing, gaining hands-on experience with enterprise-grade solutions.
+            </p>
+          </div>
+          
+          <div class="card" style="padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="font-size: 1.5rem; font-weight: 600; color: var(--text-primary);">Web Development Intern</h3>
+                <p style="color: var(--color-primary); font-weight: 600;">Infosys Springboard</p>
+              </div>
+              <span style="color: var(--text-muted); font-size: 0.9rem;">2024</span>
+            </div>
+            <p style="color: var(--text-secondary); line-height: 1.6;">
+              Gained expertise in supervised and unsupervised learning, regression analysis, and neural networks while developing web applications.
+            </p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="/experience.html" class="btn outline">View Full Experience</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Let's Build Something Amazing Together</h2>
+          <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.7;">
+            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Whether you need a full-stack developer, an AI/ML engineer, or a problem solver, let's connect!
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="/contact.html" class="btn primary btn-glow">Get In Touch</a>
+            <a href="/cv-download.html" class="btn outline">Download Resume</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h3 class="footer-title">Kundan Kumar Gupta</h3>
+          <p class="footer-description">Full-Stack Developer | AI/ML Engineer | Problem Solver</p>
+        </div>
+        
+        <div class="footer-section">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Home</a></li>
+            <li><a href="/about.html" class="footer-link">About</a></li>
+            <li><a href="/projects.html" class="footer-link">Projects</a></li>
+            <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3 class="footer-title">Contact Me</h3>
+          <ul class="footer-contact">
+            <li><a href="mailto:kumarkundan5223@gmail.com" class="footer-link">📧 kumarkundan5223@gmail.com</a></li>
+            <li><a href="tel:+919709342021" class="footer-link">📱 +91 9709342021</a></li>
+            <li><a href="https://github.com/kundankumar24" target="_blank" rel="noopener noreferrer" class="footer-link">💻 GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/kundan-kumar-gupta-193a51266" target="_blank" rel="noopener noreferrer" class="footer-link">💼 LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="footer-text">© 2026 Kundan Kumar Gupta. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Module -->
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
