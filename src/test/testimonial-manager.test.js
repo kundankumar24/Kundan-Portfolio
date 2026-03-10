@@ -211,9 +211,15 @@ describe('TestimonialManager', () => {
       const storage = {}
       global.localStorage = {
         getItem: (key) => storage[key] || null,
-        setItem: (key, value) => { storage[key] = value },
-        removeItem: (key) => { delete storage[key] },
-        clear: () => { Object.keys(storage).forEach(key => delete storage[key]) }
+        setItem: (key, value) => {
+          storage[key] = value 
+        },
+        removeItem: (key) => {
+          delete storage[key] 
+        },
+        clear: () => {
+          Object.keys(storage).forEach(key => delete storage[key]) 
+        }
       }
 
       await testimonialManager.init()
@@ -231,9 +237,15 @@ describe('TestimonialManager', () => {
       const storage = {}
       global.localStorage = {
         getItem: (key) => storage[key] || null,
-        setItem: (key, value) => { storage[key] = value },
-        removeItem: (key) => { delete storage[key] },
-        clear: () => { Object.keys(storage).forEach(key => delete storage[key]) }
+        setItem: (key, value) => {
+          storage[key] = value 
+        },
+        removeItem: (key) => {
+          delete storage[key] 
+        },
+        clear: () => {
+          Object.keys(storage).forEach(key => delete storage[key]) 
+        }
       }
 
       await testimonialManager.init()
@@ -251,9 +263,15 @@ describe('TestimonialManager', () => {
       const storage = {}
       global.localStorage = {
         getItem: (key) => storage[key] || null,
-        setItem: (key, value) => { storage[key] = value },
-        removeItem: (key) => { delete storage[key] },
-        clear: () => { Object.keys(storage).forEach(key => delete storage[key]) }
+        setItem: (key, value) => {
+          storage[key] = value 
+        },
+        removeItem: (key) => {
+          delete storage[key] 
+        },
+        clear: () => {
+          Object.keys(storage).forEach(key => delete storage[key]) 
+        }
       }
 
       // Create manager with very short expiry
@@ -276,9 +294,15 @@ describe('TestimonialManager', () => {
       const storage = {}
       global.localStorage = {
         getItem: (key) => storage[key] || null,
-        setItem: (key, value) => { storage[key] = value },
-        removeItem: (key) => { delete storage[key] },
-        clear: () => { Object.keys(storage).forEach(key => delete storage[key]) }
+        setItem: (key, value) => {
+          storage[key] = value 
+        },
+        removeItem: (key) => {
+          delete storage[key] 
+        },
+        clear: () => {
+          Object.keys(storage).forEach(key => delete storage[key]) 
+        }
       }
 
       await testimonialManager.init()

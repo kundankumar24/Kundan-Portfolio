@@ -26,31 +26,31 @@ export class SocialMediaCard {
 
     // Platform-specific rendering
     switch (platformData.platform) {
-      case 'github':
-        card.innerHTML = this.renderGitHubCard(
-          platformData,
-          showEngagementMetrics,
-          showRecentActivity,
-          compact
-        )
-        break
-      case 'linkedin':
-        card.innerHTML = this.renderLinkedInCard(
-          platformData,
-          showEngagementMetrics,
-          compact
-        )
-        break
-      case 'twitter':
-        card.innerHTML = this.renderTwitterCard(
-          platformData,
-          showEngagementMetrics,
-          compact
-        )
-        break
-      default:
-        logger.warn(`Unknown platform: ${platformData.platform}`)
-        return null
+    case 'github':
+      card.innerHTML = this.renderGitHubCard(
+        platformData,
+        showEngagementMetrics,
+        showRecentActivity,
+        compact
+      )
+      break
+    case 'linkedin':
+      card.innerHTML = this.renderLinkedInCard(
+        platformData,
+        showEngagementMetrics,
+        compact
+      )
+      break
+    case 'twitter':
+      card.innerHTML = this.renderTwitterCard(
+        platformData,
+        showEngagementMetrics,
+        compact
+      )
+      break
+    default:
+      logger.warn(`Unknown platform: ${platformData.platform}`)
+      return null
     }
 
     return card
@@ -96,8 +96,8 @@ export class SocialMediaCard {
       </div>
 
       ${
-        showMetrics && data.engagementMetrics
-          ? `
+  showMetrics && data.engagementMetrics
+    ? `
         <div class="social-card-engagement">
           <h4 class="engagement-title">Engagement Metrics</h4>
           <div class="engagement-stats">
@@ -114,18 +114,18 @@ export class SocialMediaCard {
           </div>
         </div>
       `
-          : ''
-      }
+    : ''
+}
 
       ${
-        !compact && recentRepos.length > 0
-          ? `
+  !compact && recentRepos.length > 0
+    ? `
         <div class="social-card-repos">
           <h4 class="repos-title">Recent Repositories</h4>
           <div class="repos-list">
             ${recentRepos
-              .map(
-                (repo) => `
+    .map(
+      (repo) => `
               <div class="repo-item">
                 <a href="${repo.url}" target="_blank" rel="noopener noreferrer" class="repo-name">
                   ${this.escapeHtml(repo.name)}
@@ -138,23 +138,23 @@ export class SocialMediaCard {
                 </div>
               </div>
             `
-              )
-              .join('')}
+    )
+    .join('')}
           </div>
         </div>
       `
-          : ''
-      }
+    : ''
+}
 
       ${
-        showActivity && recentActivity.length > 0
-          ? `
+  showActivity && recentActivity.length > 0
+    ? `
         <div class="social-card-activity">
           <h4 class="activity-title">Recent Activity</h4>
           <div class="activity-list">
             ${recentActivity
-              .map(
-                (activity) => `
+    .map(
+      (activity) => `
               <div class="activity-item">
                 <span class="activity-description">${this.escapeHtml(activity.description)}</span>
                 <a href="${activity.url}" target="_blank" rel="noopener noreferrer" class="activity-repo">
@@ -163,13 +163,13 @@ export class SocialMediaCard {
                 <span class="activity-time">${this.formatTimeAgo(activity.createdAt)}</span>
               </div>
             `
-              )
-              .join('')}
+    )
+    .join('')}
           </div>
         </div>
       `
-          : ''
-      }
+    : ''
+}
     `
   }
 
@@ -191,67 +191,67 @@ export class SocialMediaCard {
       </div>
 
       ${
-        data.connections || data.followers
-          ? `
+  data.connections || data.followers
+    ? `
         <div class="social-card-stats">
           ${
-            data.connections
-              ? `
+  data.connections
+    ? `
             <div class="stat">
               <span class="stat-value">${this.formatNumber(data.connections)}</span>
               <span class="stat-label">Connections</span>
             </div>
           `
-              : ''
-          }
+    : ''
+}
           ${
-            data.followers
-              ? `
+  data.followers
+    ? `
             <div class="stat">
               <span class="stat-value">${this.formatNumber(data.followers)}</span>
               <span class="stat-label">Followers</span>
             </div>
           `
-              : ''
-          }
+    : ''
+}
         </div>
       `
-          : ''
-      }
+    : ''
+}
 
       ${
-        showMetrics && data.engagementMetrics
-          ? `
+  showMetrics && data.engagementMetrics
+    ? `
         <div class="social-card-engagement">
           <h4 class="engagement-title">Engagement Metrics</h4>
           <div class="engagement-stats">
             ${
-              data.engagementMetrics.profileViews
-                ? `
+  data.engagementMetrics.profileViews
+    ? `
               <div class="engagement-stat">
                 <span class="engagement-icon">👁️</span>
                 <span class="engagement-value">${this.formatNumber(data.engagementMetrics.profileViews)}</span>
                 <span class="engagement-label">Profile Views</span>
               </div>
             `
-                : ''
-            }
+    : ''
+}
             ${
-              data.engagementMetrics.postImpressions
-                ? `
+  data.engagementMetrics.postImpressions
+    ? `
               <div class="engagement-stat">
                 <span class="engagement-icon">📊</span>
                 <span class="engagement-value">${this.formatNumber(data.engagementMetrics.postImpressions)}</span>
                 <span class="engagement-label">Post Impressions</span>
               </div>
             `
-                : ''
-            }
+    : ''
+}
           </div>
         </div>
       `
-          : ''
-      }
+    : ''
+}
     `
   }
 
@@ -274,67 +274,67 @@ export class SocialMediaCard {
       </div>
 
       ${
-        data.followers || data.following
-          ? `
+  data.followers || data.following
+    ? `
         <div class="social-card-stats">
           ${
-            data.followers
-              ? `
+  data.followers
+    ? `
             <div class="stat">
               <span class="stat-value">${this.formatNumber(data.followers)}</span>
               <span class="stat-label">Followers</span>
             </div>
           `
-              : ''
-          }
+    : ''
+}
           ${
-            data.following
-              ? `
+  data.following
+    ? `
             <div class="stat">
               <span class="stat-value">${this.formatNumber(data.following)}</span>
               <span class="stat-label">Following</span>
             </div>
           `
-              : ''
-          }
+    : ''
+}
         </div>
       `
-          : ''
-      }
+    : ''
+}
 
       ${
-        showMetrics && data.engagementMetrics
-          ? `
+  showMetrics && data.engagementMetrics
+    ? `
         <div class="social-card-engagement">
           <h4 class="engagement-title">Engagement Metrics</h4>
           <div class="engagement-stats">
             ${
-              data.engagementMetrics.averageLikes
-                ? `
+  data.engagementMetrics.averageLikes
+    ? `
               <div class="engagement-stat">
                 <span class="engagement-icon">❤️</span>
                 <span class="engagement-value">${this.formatNumber(data.engagementMetrics.averageLikes)}</span>
                 <span class="engagement-label">Avg. Likes</span>
               </div>
             `
-                : ''
-            }
+    : ''
+}
             ${
-              data.engagementMetrics.averageRetweets
-                ? `
+  data.engagementMetrics.averageRetweets
+    ? `
               <div class="engagement-stat">
                 <span class="engagement-icon">🔄</span>
                 <span class="engagement-value">${this.formatNumber(data.engagementMetrics.averageRetweets)}</span>
                 <span class="engagement-label">Avg. Retweets</span>
               </div>
             `
-                : ''
-            }
+    : ''
+}
           </div>
         </div>
       `
-          : ''
-      }
+    : ''
+}
     `
   }
 
@@ -390,11 +390,21 @@ export class SocialMediaCard {
     const now = new Date()
     const seconds = Math.floor((now - date) / 1000)
 
-    if (seconds < 60) return 'just now'
-    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`
-    if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`
-    if (seconds < 604800) return `${Math.floor(seconds / 86400)}d ago`
-    if (seconds < 2592000) return `${Math.floor(seconds / 604800)}w ago`
+    if (seconds < 60) {
+      return 'just now'
+    }
+    if (seconds < 3600) {
+      return `${Math.floor(seconds / 60)}m ago`
+    }
+    if (seconds < 86400) {
+      return `${Math.floor(seconds / 3600)}h ago`
+    }
+    if (seconds < 604800) {
+      return `${Math.floor(seconds / 86400)}d ago`
+    }
+    if (seconds < 2592000) {
+      return `${Math.floor(seconds / 604800)}w ago`
+    }
     return date.toLocaleDateString()
   }
 

@@ -293,15 +293,15 @@ describe('Property 12: Social Integration Functionality', () => {
           // Verify platform-specific URL patterns
           const parsedUrl = new URL(shareUrl)
           switch (platform) {
-            case 'linkedin':
-              expect(parsedUrl.hostname).toContain('linkedin.com')
-              break
-            case 'twitter':
-              expect(parsedUrl.hostname).toContain('twitter.com')
-              break
-            case 'facebook':
-              expect(parsedUrl.hostname).toContain('facebook.com')
-              break
+          case 'linkedin':
+            expect(parsedUrl.hostname).toContain('linkedin.com')
+            break
+          case 'twitter':
+            expect(parsedUrl.hostname).toContain('twitter.com')
+            break
+          case 'facebook':
+            expect(parsedUrl.hostname).toContain('facebook.com')
+            break
           }
 
           openSpy.mockRestore()
@@ -597,9 +597,15 @@ describe('Property 12: Social Integration Functionality', () => {
 
           // Calculate expected total
           let expectedTotal = 0
-          if (githubFollowers !== null) expectedTotal += githubFollowers
-          if (linkedinFollowers !== null) expectedTotal += linkedinFollowers
-          if (twitterFollowers !== null) expectedTotal += twitterFollowers
+          if (githubFollowers !== null) {
+            expectedTotal += githubFollowers
+          }
+          if (linkedinFollowers !== null) {
+            expectedTotal += linkedinFollowers
+          }
+          if (twitterFollowers !== null) {
+            expectedTotal += twitterFollowers
+          }
 
           // Verify combined metrics
           expect(metrics.totalFollowers).toBe(expectedTotal)
@@ -608,9 +614,15 @@ describe('Property 12: Social Integration Functionality', () => {
 
           // Verify platform count
           let expectedPlatformCount = 0
-          if (githubFollowers !== null) expectedPlatformCount++
-          if (linkedinFollowers !== null) expectedPlatformCount++
-          if (twitterFollowers !== null) expectedPlatformCount++
+          if (githubFollowers !== null) {
+            expectedPlatformCount++
+          }
+          if (linkedinFollowers !== null) {
+            expectedPlatformCount++
+          }
+          if (twitterFollowers !== null) {
+            expectedPlatformCount++
+          }
 
           expect(metrics.platforms.length).toBe(expectedPlatformCount)
         }

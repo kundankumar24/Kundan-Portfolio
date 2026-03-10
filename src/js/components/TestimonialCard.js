@@ -300,13 +300,17 @@ export class TestimonialCard {
     const container = document.createElement('div')
     container.className = `testimonials-showcase testimonials-showcase--${layout}`
 
-    let sortedTestimonials = [...testimonials]
+    const sortedTestimonials = [...testimonials]
 
     // Sort to show featured first
     if (featuredFirst) {
       sortedTestimonials.sort((a, b) => {
-        if (a.featured && !b.featured) return -1
-        if (!a.featured && b.featured) return 1
+        if (a.featured && !b.featured) {
+          return -1
+        }
+        if (!a.featured && b.featured) {
+          return 1
+        }
         return 0
       })
     }

@@ -111,24 +111,24 @@ export class ServiceWorkerManager {
       logger.info('Service worker state changed:', worker.state)
 
       switch (worker.state) {
-        case 'installed':
-          if (navigator.serviceWorker.controller) {
-            // New service worker available
-            this.notifyUpdateAvailable()
-          } else {
-            // First installation
-            this.notifyInstalled()
-          }
-          break
+      case 'installed':
+        if (navigator.serviceWorker.controller) {
+          // New service worker available
+          this.notifyUpdateAvailable()
+        } else {
+          // First installation
+          this.notifyInstalled()
+        }
+        break
 
-        case 'activated':
-          logger.info('Service worker activated')
-          this.notifyActivated()
-          break
+      case 'activated':
+        logger.info('Service worker activated')
+        this.notifyActivated()
+        break
 
-        case 'redundant':
-          logger.warn('Service worker became redundant')
-          break
+      case 'redundant':
+        logger.warn('Service worker became redundant')
+        break
       }
     })
   }
@@ -229,20 +229,20 @@ export class ServiceWorkerManager {
     logger.info('Message from service worker:', type, data)
 
     switch (type) {
-      case 'sync-success':
-        this.handleSyncSuccess(data)
-        break
+    case 'sync-success':
+      this.handleSyncSuccess(data)
+      break
 
-      case 'sync-error':
-        this.handleSyncError(data)
-        break
+    case 'sync-error':
+      this.handleSyncError(data)
+      break
 
-      case 'cache-updated':
-        this.handleCacheUpdated(data)
-        break
+    case 'cache-updated':
+      this.handleCacheUpdated(data)
+      break
 
-      default:
-        logger.info('Unknown message type:', type)
+    default:
+      logger.info('Unknown message type:', type)
     }
   }
 
@@ -480,19 +480,19 @@ export class ServiceWorkerManager {
         <h4 class="sw-notification__title">${title}</h4>
         <p class="sw-notification__message">${message}</p>
         ${
-          actions.length > 0
-            ? `
+  actions.length > 0
+    ? `
           <div class="sw-notification__actions">
             ${actions
-              .map(
-                (action, index) =>
-                  `<button class="sw-notification__action" data-action="${index}">${action.label}</button>`
-              )
-              .join('')}
+    .map(
+      (action, index) =>
+        `<button class="sw-notification__action" data-action="${index}">${action.label}</button>`
+    )
+    .join('')}
           </div>
         `
-            : ''
-        }
+    : ''
+}
       </div>
       <button class="sw-notification__close" aria-label="Close notification">&times;</button>
     `

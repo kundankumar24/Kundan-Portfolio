@@ -59,7 +59,9 @@ function renderSkills(container) {
   
   categories.forEach((category, categoryIndex) => {
     const skills = skillsData[category]
-    if (!skills || skills.length === 0) return
+    if (!skills || skills.length === 0) {
+      return
+    }
     
     console.log(`Creating section for category: ${category} (${skills.length} skills)`)
     

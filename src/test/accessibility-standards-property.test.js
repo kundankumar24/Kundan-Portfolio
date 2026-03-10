@@ -290,15 +290,15 @@ describe('Property 8: Accessibility Standards Compliance', () => {
           
           // Add label based on method
           switch (config.labelMethod) {
-            case 'textContent':
-              element.textContent = config.labelText
-              break
-            case 'ariaLabel':
-              element.setAttribute('aria-label', config.labelText)
-              break
-            case 'title':
-              element.title = config.labelText
-              break
+          case 'textContent':
+            element.textContent = config.labelText
+            break
+          case 'ariaLabel':
+            element.setAttribute('aria-label', config.labelText)
+            break
+          case 'title':
+            element.title = config.labelText
+            break
           }
           
           document.body.appendChild(element)

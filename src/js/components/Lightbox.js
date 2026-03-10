@@ -226,15 +226,15 @@ export class Lightbox {
     }
 
     switch (e.key) {
-      case 'Escape':
-        this.close()
-        break
-      case 'ArrowLeft':
-        this.prev()
-        break
-      case 'ArrowRight':
-        this.next()
-        break
+    case 'Escape':
+      this.close()
+      break
+    case 'ArrowLeft':
+      this.prev()
+      break
+    case 'ArrowRight':
+      this.next()
+      break
     }
   }
 

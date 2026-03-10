@@ -181,11 +181,15 @@ describe('Property 1: Bug Condition - Navigation Without Flash Effect', () => {
             tagName: 'A',
             href: `https://example.com/${targetPage}`,
             getAttribute: vi.fn((attr) => {
-              if (attr === 'href') return targetPage
+              if (attr === 'href') {
+                return targetPage
+              }
               return null
             }),
             closest: vi.fn((selector) => {
-              if (selector === 'a') return linkElement
+              if (selector === 'a') {
+                return linkElement
+              }
               return null
             }),
           }
@@ -276,11 +280,15 @@ describe('Property 1: Bug Condition - Navigation Without Flash Effect', () => {
               tagName: 'A',
               href: `https://example.com/${targetPage}`,
               getAttribute: vi.fn((attr) => {
-                if (attr === 'href') return targetPage
+                if (attr === 'href') {
+                  return targetPage
+                }
                 return null
               }),
               closest: vi.fn((selector) => {
-                if (selector === 'a') return linkElement
+                if (selector === 'a') {
+                  return linkElement
+                }
                 return null
               }),
             }
@@ -342,11 +350,15 @@ describe('Property 1: Bug Condition - Navigation Without Flash Effect', () => {
       tagName: 'A',
       href: 'https://example.com/about.html',
       getAttribute: vi.fn((attr) => {
-        if (attr === 'href') return 'about.html'
+        if (attr === 'href') {
+          return 'about.html'
+        }
         return null
       }),
       closest: vi.fn((selector) => {
-        if (selector === 'a') return linkElement
+        if (selector === 'a') {
+          return linkElement
+        }
         return null
       }),
     }
@@ -551,11 +563,15 @@ describe('Property 2: Preservation - Non-Navigation Functionality', () => {
             tagName: 'A',
             href: externalUrl,
             getAttribute: vi.fn((attr) => {
-              if (attr === 'href') return externalUrl
+              if (attr === 'href') {
+                return externalUrl
+              }
               return null
             }),
             closest: vi.fn((selector) => {
-              if (selector === 'a') return linkElement
+              if (selector === 'a') {
+                return linkElement
+              }
               return null
             }),
           }
@@ -623,11 +639,15 @@ describe('Property 2: Preservation - Non-Navigation Functionality', () => {
             tagName: 'A',
             href: `https://example.com/${anchorLink}`,
             getAttribute: vi.fn((attr) => {
-              if (attr === 'href') return anchorLink
+              if (attr === 'href') {
+                return anchorLink
+              }
               return null
             }),
             closest: vi.fn((selector) => {
-              if (selector === 'a') return linkElement
+              if (selector === 'a') {
+                return linkElement
+              }
               return null
             }),
           }
@@ -702,11 +722,15 @@ describe('Property 2: Preservation - Non-Navigation Functionality', () => {
             tagName: 'A',
             href: `https://example.com/${targetPage}`,
             getAttribute: vi.fn((attr) => {
-              if (attr === 'href') return targetPage
+              if (attr === 'href') {
+                return targetPage
+              }
               return null
             }),
             closest: vi.fn((selector) => {
-              if (selector === 'a') return linkElement
+              if (selector === 'a') {
+                return linkElement
+              }
               return null
             }),
           }
@@ -794,11 +818,15 @@ describe('Property 2: Preservation - Non-Navigation Functionality', () => {
       tagName: 'A',
       href: 'https://example.com/about.html',
       getAttribute: vi.fn((attr) => {
-        if (attr === 'href') return 'about.html'
+        if (attr === 'href') {
+          return 'about.html'
+        }
         return null
       }),
       closest: vi.fn((selector) => {
-        if (selector === 'a') return linkElement
+        if (selector === 'a') {
+          return linkElement
+        }
         return null
       }),
     }
@@ -937,11 +965,15 @@ describe('Property 2: Preservation - Non-Navigation Functionality', () => {
                 ? scenario.href
                 : `https://example.com/${scenario.href}`,
             getAttribute: vi.fn((attr) => {
-              if (attr === 'href') return scenario.href
+              if (attr === 'href') {
+                return scenario.href
+              }
               return null
             }),
             closest: vi.fn((selector) => {
-              if (selector === 'a') return linkElement
+              if (selector === 'a') {
+                return linkElement
+              }
               return null
             }),
           }

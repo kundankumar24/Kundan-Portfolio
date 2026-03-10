@@ -301,7 +301,9 @@ export class AnalyticsService {
    * Track performance metrics
    */
   trackPerformanceMetrics(metrics) {
-    if (!this.config.enablePerformanceTracking) return
+    if (!this.config.enablePerformanceTracking) {
+      return
+    }
 
     // Track Core Web Vitals
     if (metrics.lcp !== null) {
@@ -360,10 +362,16 @@ export class AnalyticsService {
     }
 
     const threshold = thresholds[metric]
-    if (!threshold) return 'unknown'
+    if (!threshold) {
+      return 'unknown'
+    }
 
-    if (value <= threshold.good) return 'good'
-    if (value <= threshold.poor) return 'needs-improvement'
+    if (value <= threshold.good) {
+      return 'good'
+    }
+    if (value <= threshold.poor) {
+      return 'needs-improvement'
+    }
     return 'poor'
   }
 
@@ -371,7 +379,9 @@ export class AnalyticsService {
    * Set up performance tracking integration
    */
   setupPerformanceTracking() {
-    if (!this.performanceMonitor) return
+    if (!this.performanceMonitor) {
+      return
+    }
 
     // Listen to performance reports
     this.performanceMonitor.onReport((report) => {
@@ -499,7 +509,9 @@ export class AnalyticsService {
     // Throttle scroll tracking
     let scrollTimeout
     window.addEventListener('scroll', () => {
-      if (scrollTimeout) clearTimeout(scrollTimeout)
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout)
+      }
       scrollTimeout = setTimeout(trackScroll, 200)
     })
 
@@ -564,7 +576,9 @@ export class AnalyticsService {
    * Flush queued events
    */
   flushQueue() {
-    if (this.eventQueue.length === 0) return
+    if (this.eventQueue.length === 0) {
+      return
+    }
 
     logger.info(`Flushing ${this.eventQueue.length} queued events`)
     const queue = [...this.eventQueue]

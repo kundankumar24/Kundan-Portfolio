@@ -170,7 +170,9 @@ export class PWAInstallManager {
    * Show custom install prompt
    */
   showInstallPrompt() {
-    if (this.installPromptShown) return
+    if (this.installPromptShown) {
+      return
+    }
 
     this.installPromptShown = true
 
@@ -369,23 +371,27 @@ export class PWAInstallManager {
    * Set up smooth navigation for app-like experience
    */
   setupSmoothNavigation() {
-      // Intercept internal link clicks for smooth transitions
-      document.addEventListener('click', (event) => {
-        const link = event.target.closest('a')
-        if (!link) return
+    // Intercept internal link clicks for smooth transitions
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a')
+      if (!link) {
+        return
+      }
 
-        const href = link.getAttribute('href')
-        if (!href || href.startsWith('#') || href.startsWith('http')) return
+      const href = link.getAttribute('href')
+      if (!href || href.startsWith('#') || href.startsWith('http')) {
+        return
+      }
 
-        // Only handle internal links in standalone mode
-        if (this.isStandalone) {
-          event.preventDefault()
+      // Only handle internal links in standalone mode
+      if (this.isStandalone) {
+        event.preventDefault()
 
-          // Navigate immediately without opacity transition
-          window.location.href = href
-        }
-      })
-    }
+        // Navigate immediately without opacity transition
+        window.location.href = href
+      }
+    })
+  }
 
 
   /**

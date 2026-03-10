@@ -59,7 +59,9 @@ function polyfillIntersectionObserver() {
  * Polyfill for CustomEvent constructor
  */
 function polyfillCustomEvent() {
-  if (typeof window.CustomEvent === 'function') return
+  if (typeof window.CustomEvent === 'function') {
+    return
+  }
 
   function CustomEvent(event, params) {
     params = params || { bubbles: false, cancelable: false, detail: null }
@@ -120,7 +122,9 @@ function polyfillRemove() {
  */
 function polyfillObjectFit() {
   // Check if object-fit is supported
-  if ('objectFit' in document.documentElement.style) return
+  if ('objectFit' in document.documentElement.style) {
+    return
+  }
 
   // Add fallback for images with object-fit
   const images = document.querySelectorAll('img[data-object-fit]')
@@ -154,7 +158,9 @@ function polyfillObjectFit() {
  */
 function polyfillSmoothScroll() {
   // Check if smooth scroll is supported
-  if ('scrollBehavior' in document.documentElement.style) return
+  if ('scrollBehavior' in document.documentElement.style) {
+    return
+  }
 
   // Override scroll methods to add smooth behavior
   const originalScrollTo = window.scrollTo
@@ -190,7 +196,9 @@ function polyfillSmoothScroll() {
     let startTime = null
 
     function animation(currentTime) {
-      if (startTime === null) startTime = currentTime
+      if (startTime === null) {
+        startTime = currentTime
+      }
       const timeElapsed = currentTime - startTime
       const progress = Math.min(timeElapsed / duration, 1)
 
@@ -215,7 +223,9 @@ function polyfillSmoothScroll() {
  * Polyfill for fetch API (basic implementation)
  */
 function polyfillFetch() {
-  if (typeof window.fetch !== 'undefined') return
+  if (typeof window.fetch !== 'undefined') {
+    return
+  }
 
   window.fetch = function (url, options = {}) {
     return new Promise((resolve, reject) => {
@@ -257,7 +267,9 @@ function polyfillFetch() {
 
   function parseHeaders(headerString) {
     const headers = {}
-    if (!headerString) return headers
+    if (!headerString) {
+      return headers
+    }
 
     headerString.split('\r\n').forEach(line => {
       const parts = line.split(': ')
@@ -324,7 +336,9 @@ export const features = {
    * Check if WebP is supported
    */
   async hasWebP() {
-    if (!window.createImageBitmap) return false
+    if (!window.createImageBitmap) {
+      return false
+    }
 
     const webpData =
       'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA='
@@ -344,7 +358,9 @@ export const features = {
    * Check if AVIF is supported
    */
   async hasAVIF() {
-    if (!window.createImageBitmap) return false
+    if (!window.createImageBitmap) {
+      return false
+    }
 
     const avifData =
       'data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAAB0AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAAAIAAAACAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQ0MAAAAABNjb2xybmNseAACAAIAAYAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAACVtZGF0EgAKCBgANogQEAwgMg8f8D///8WfhwB8+ErK42A='

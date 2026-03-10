@@ -109,7 +109,9 @@ export class SocialSharing {
    * Resolve image URL to absolute URL
    */
   resolveImageUrl(imageUrl) {
-    if (!imageUrl) return null
+    if (!imageUrl) {
+      return null
+    }
 
     // If already absolute URL, return as is
     if (imageUrl.startsWith('http://') || imageUrl.startsWith('https://')) {
@@ -133,20 +135,20 @@ export class SocialSharing {
 
     // Platform-specific sharing
     switch (platform.toLowerCase()) {
-      case 'linkedin':
-        return this.shareOnLinkedIn(metadata)
-      case 'twitter':
-        return this.shareOnTwitter(metadata)
-      case 'facebook':
-        return this.shareOnFacebook(metadata)
-      case 'email':
-        return this.shareViaEmail(metadata)
-      case 'copy':
-        return this.copyToClipboard(metadata.url)
-      case 'native':
-        return this.shareNative(metadata)
-      default:
-        throw new Error(`Unsupported platform: ${platform}`)
+    case 'linkedin':
+      return this.shareOnLinkedIn(metadata)
+    case 'twitter':
+      return this.shareOnTwitter(metadata)
+    case 'facebook':
+      return this.shareOnFacebook(metadata)
+    case 'email':
+      return this.shareViaEmail(metadata)
+    case 'copy':
+      return this.copyToClipboard(metadata.url)
+    case 'native':
+      return this.shareNative(metadata)
+    default:
+      throw new Error(`Unsupported platform: ${platform}`)
     }
   }
 
@@ -293,7 +295,9 @@ export class SocialSharing {
    * Track sharing event in analytics
    */
   trackShare(platform, content, metadata) {
-    if (!this.analytics) return
+    if (!this.analytics) {
+      return
+    }
 
     this.analytics.trackEvent({
       eventName: 'share',
@@ -342,7 +346,9 @@ export class SocialSharing {
    * Set or update a meta tag
    */
   setMetaTag(attribute, attributeValue, content) {
-    if (!content) return
+    if (!content) {
+      return
+    }
 
     let element = document.querySelector(`meta[${attribute}="${attributeValue}"]`)
 

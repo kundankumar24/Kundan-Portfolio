@@ -171,10 +171,18 @@ describe('Property 13: Content Display Completeness', () => {
 
           // Count expected metrics
           let expectedMetricCount = 0
-          if (project.metrics.performanceImprovement) expectedMetricCount++
-          if (project.metrics.userGrowth) expectedMetricCount++
-          if (project.metrics.revenue) expectedMetricCount++
-          if (project.metrics.other) expectedMetricCount++
+          if (project.metrics.performanceImprovement) {
+            expectedMetricCount++
+          }
+          if (project.metrics.userGrowth) {
+            expectedMetricCount++
+          }
+          if (project.metrics.revenue) {
+            expectedMetricCount++
+          }
+          if (project.metrics.other) {
+            expectedMetricCount++
+          }
 
           const metricElements = card.querySelectorAll('.project-card__metric')
           expect(metricElements.length).toBe(expectedMetricCount)

@@ -159,7 +159,9 @@ export class ImageOptimizer {
     const img = element.tagName === 'IMG' ? element : element.querySelector('img')
     const sources = element.querySelectorAll('source')
 
-    if (!img) return
+    if (!img) {
+      return
+    }
 
     // Load sources
     sources.forEach((source) => {

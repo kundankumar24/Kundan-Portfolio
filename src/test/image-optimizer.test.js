@@ -342,7 +342,9 @@ describe('ImageOptimizer', () => {
 
       const originalCreateElement = document.createElement.bind(document)
       document.createElement = vi.fn((tag) => {
-        if (tag === 'canvas') return mockCanvas
+        if (tag === 'canvas') {
+          return mockCanvas
+        }
         return originalCreateElement(tag)
       })
 
@@ -366,7 +368,9 @@ describe('ImageOptimizer', () => {
 
       const originalCreateElement = document.createElement.bind(document)
       document.createElement = vi.fn((tag) => {
-        if (tag === 'canvas') return mockCanvas
+        if (tag === 'canvas') {
+          return mockCanvas
+        }
         return originalCreateElement(tag)
       })
 

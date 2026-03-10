@@ -278,7 +278,9 @@ export class ContactForm {
    * Set up real-time validation
    */
   setupRealTimeValidation() {
-    if (!this.config.validateOnInput) return
+    if (!this.config.validateOnInput) {
+      return
+    }
 
     const fields = this.form.querySelectorAll('input, textarea')
     fields.forEach((field) => {
@@ -298,7 +300,9 @@ export class ContactForm {
    */
   validateField(fieldName, value) {
     const validator = this.validators[fieldName]
-    if (!validator) return { valid: true }
+    if (!validator) {
+      return { valid: true }
+    }
 
     const errors = []
 
@@ -695,7 +699,9 @@ export class ContactForm {
    */
   showFieldError(fieldName, message) {
     const field = this.form.querySelector(`[name="${fieldName}"]`)
-    if (!field) return
+    if (!field) {
+      return
+    }
 
     // Add error class to field
     field.classList.add('error')
@@ -717,7 +723,9 @@ export class ContactForm {
    */
   clearFieldError(fieldName) {
     const field = this.form.querySelector(`[name="${fieldName}"]`)
-    if (!field) return
+    if (!field) {
+      return
+    }
 
     field.classList.remove('error')
     field.removeAttribute('aria-invalid')

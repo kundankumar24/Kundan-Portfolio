@@ -64,7 +64,9 @@ describe('Property 14: Build Process and Code Quality', () => {
 
       if (existsSync(DIST_DIR)) {
         const checkAssetSizes = (dir, maxSize, extension) => {
-          if (!existsSync(dir)) return
+          if (!existsSync(dir)) {
+            return
+          }
 
           const files = readdirSync(dir).filter(f => f.endsWith(extension))
 
@@ -204,7 +206,9 @@ describe('Property 14: Build Process and Code Quality', () => {
       const jsFiles = []
 
       const collectJsFiles = dir => {
-        if (!existsSync(dir)) return
+        if (!existsSync(dir)) {
+          return
+        }
 
         const items = readdirSync(dir)
 
@@ -451,7 +455,9 @@ describe('Property 14: Build Process and Code Quality', () => {
 
       if (existsSync(assetsDir)) {
         const checkForModernFormats = dir => {
-          if (!existsSync(dir)) return false
+          if (!existsSync(dir)) {
+            return false
+          }
 
           const files = readdirSync(dir)
           const imageFiles = files.filter(f =>

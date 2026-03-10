@@ -544,8 +544,12 @@ describe('Property 10: PWA Functionality', () => {
 
           // Property: Destroy should not throw errors
           expect(() => {
-            if (sw) sw.destroy()
-            if (pwa) pwa.destroy()
+            if (sw) {
+              sw.destroy()
+            }
+            if (pwa) {
+              pwa.destroy()
+            }
           }).not.toThrow()
 
           // Property: After destroy, update timer should be cleared

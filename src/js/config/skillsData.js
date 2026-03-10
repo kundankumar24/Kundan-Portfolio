@@ -369,10 +369,18 @@ export function getCategories() {
  * @returns {string} Proficiency level
  */
 export function getProficiencyLevel(proficiency) {
-  if (proficiency >= 90) return 'Expert'
-  if (proficiency >= 80) return 'Advanced'
-  if (proficiency >= 70) return 'Intermediate'
-  if (proficiency >= 60) return 'Beginner'
+  if (proficiency >= 90) {
+    return 'Expert'
+  }
+  if (proficiency >= 80) {
+    return 'Advanced'
+  }
+  if (proficiency >= 70) {
+    return 'Intermediate'
+  }
+  if (proficiency >= 60) {
+    return 'Beginner'
+  }
   return 'Novice'
 }
 
@@ -382,9 +390,17 @@ export function getProficiencyLevel(proficiency) {
  * @returns {string} CSS class name
  */
 export function getProficiencyColorClass(proficiency) {
-  if (proficiency >= 90) return 'proficiency-bar__fill--expert'
-  if (proficiency >= 80) return 'proficiency-bar__fill--advanced'
-  if (proficiency >= 70) return 'proficiency-bar__fill--intermediate'
-  if (proficiency >= 60) return 'proficiency-bar__fill--beginner'
+  if (proficiency >= 90) {
+    return 'proficiency-bar__fill--expert'
+  }
+  if (proficiency >= 80) {
+    return 'proficiency-bar__fill--advanced'
+  }
+  if (proficiency >= 70) {
+    return 'proficiency-bar__fill--intermediate'
+  }
+  if (proficiency >= 60) {
+    return 'proficiency-bar__fill--beginner'
+  }
   return 'proficiency-bar__fill--novice'
 }

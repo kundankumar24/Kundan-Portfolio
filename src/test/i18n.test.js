@@ -221,7 +221,9 @@ describe('I18nEngine', () => {
     it('should update UI elements with data-i18n attribute', async () => {
       const mockElement = {
         getAttribute: vi.fn((attr) => {
-          if (attr === 'data-i18n') return 'nav.home'
+          if (attr === 'data-i18n') {
+            return 'nav.home'
+          }
           return null
         }),
         setAttribute: vi.fn(),

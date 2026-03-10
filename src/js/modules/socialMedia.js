@@ -221,26 +221,26 @@ export class SocialMediaIntegration {
       }
 
       switch (event.type) {
-        case 'PushEvent':
-          activity.description = `Pushed ${event.payload.commits?.length || 0} commit(s)`
-          break
-        case 'CreateEvent':
-          activity.description = `Created ${event.payload.ref_type}`
-          break
-        case 'WatchEvent':
-          activity.description = 'Starred a repository'
-          break
-        case 'ForkEvent':
-          activity.description = 'Forked a repository'
-          break
-        case 'IssuesEvent':
-          activity.description = `${event.payload.action} an issue`
-          break
-        case 'PullRequestEvent':
-          activity.description = `${event.payload.action} a pull request`
-          break
-        default:
-          activity.description = event.type.replace('Event', '')
+      case 'PushEvent':
+        activity.description = `Pushed ${event.payload.commits?.length || 0} commit(s)`
+        break
+      case 'CreateEvent':
+        activity.description = `Created ${event.payload.ref_type}`
+        break
+      case 'WatchEvent':
+        activity.description = 'Starred a repository'
+        break
+      case 'ForkEvent':
+        activity.description = 'Forked a repository'
+        break
+      case 'IssuesEvent':
+        activity.description = `${event.payload.action} an issue`
+        break
+      case 'PullRequestEvent':
+        activity.description = `${event.payload.action} a pull request`
+        break
+      default:
+        activity.description = event.type.replace('Event', '')
       }
 
       return activity

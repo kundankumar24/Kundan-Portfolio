@@ -215,8 +215,8 @@ describe('Property 1: Animation System Integrity', () => {
             const expectedHoverClass = element.classList.contains('card')
               ? 'card-hover'
               : element.classList.contains('btn')
-              ? 'btn-hover'
-              : 'nav-link-hover'
+                ? 'btn-hover'
+                : 'nav-link-hover'
 
             // Simulate mouseenter
             const mouseEnterEvent = new dom.window.MouseEvent('mouseenter')

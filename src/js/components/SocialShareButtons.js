@@ -96,7 +96,9 @@ export class SocialShareButtons {
    */
   createButton(platform, content, options) {
     const config = this.platformConfig[platform]
-    if (!config) return null
+    if (!config) {
+      return null
+    }
 
     const button = document.createElement('button')
     button.className = `social-share-button social-share-button--${platform}`

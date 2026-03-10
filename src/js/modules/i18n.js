@@ -235,7 +235,7 @@ export class I18nEngine {
           send: 'Envoyer le Message',
           sending: 'Envoi en cours...',
           success: 'Message envoyé avec succès!',
-          error: "Échec de l'envoi du message. Veuillez réessayer.",
+          error: 'Échec de l\'envoi du message. Veuillez réessayer.',
         },
         footer: {
           rights: 'Tous droits réservés',

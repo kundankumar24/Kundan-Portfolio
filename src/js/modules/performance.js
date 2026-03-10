@@ -112,7 +112,9 @@ export class PerformanceMonitor {
    * Track Largest Contentful Paint (LCP)
    */
   trackLCP() {
-    if (typeof PerformanceObserver === 'undefined') return
+    if (typeof PerformanceObserver === 'undefined') {
+      return
+    }
 
     try {
       const observer = new PerformanceObserver((list) => {
@@ -133,7 +135,9 @@ export class PerformanceMonitor {
    * Track First Input Delay (FID)
    */
   trackFID() {
-    if (typeof PerformanceObserver === 'undefined') return
+    if (typeof PerformanceObserver === 'undefined') {
+      return
+    }
 
     try {
       const observer = new PerformanceObserver((list) => {
@@ -155,7 +159,9 @@ export class PerformanceMonitor {
    * Track Cumulative Layout Shift (CLS)
    */
   trackCLS() {
-    if (typeof PerformanceObserver === 'undefined') return
+    if (typeof PerformanceObserver === 'undefined') {
+      return
+    }
 
     try {
       let clsValue = 0
@@ -181,7 +187,9 @@ export class PerformanceMonitor {
    * Track Time to First Byte (TTFB)
    */
   trackTTFB() {
-    if (typeof window === 'undefined' || !window.performance) return
+    if (typeof window === 'undefined' || !window.performance) {
+      return
+    }
 
     try {
       const perfData = window.performance.timing
@@ -198,7 +206,9 @@ export class PerformanceMonitor {
    * Track First Contentful Paint (FCP)
    */
   trackFCP() {
-    if (typeof PerformanceObserver === 'undefined') return
+    if (typeof PerformanceObserver === 'undefined') {
+      return
+    }
 
     try {
       const observer = new PerformanceObserver((list) => {
@@ -222,7 +232,9 @@ export class PerformanceMonitor {
    * Check if metric exceeds performance budget
    */
   checkBudget(metric, value) {
-    if (this.isPaused) return
+    if (this.isPaused) {
+      return
+    }
 
     const budget = this.config.performanceBudgets[metric]
     if (budget && value > budget) {
@@ -262,8 +274,12 @@ export class PerformanceMonitor {
    */
   calculateSeverity(value, budget) {
     const ratio = value / budget
-    if (ratio < 1.2) return 'low'
-    if (ratio < 1.5) return 'medium'
+    if (ratio < 1.2) {
+      return 'low'
+    }
+    if (ratio < 1.5) {
+      return 'medium'
+    }
     return 'high'
   }
 
@@ -305,9 +321,15 @@ export class PerformanceMonitor {
     const value = this.metrics[metric]
     const budget = this.config.performanceBudgets[metric]
 
-    if (value === null) return 'unknown'
-    if (value <= budget) return 'good'
-    if (value <= budget * 1.5) return 'needs-improvement'
+    if (value === null) {
+      return 'unknown'
+    }
+    if (value <= budget) {
+      return 'good'
+    }
+    if (value <= budget * 1.5) {
+      return 'needs-improvement'
+    }
     return 'poor'
   }
 
@@ -317,7 +339,9 @@ export class PerformanceMonitor {
    * Requirements: 6.5, 6.6, 6.7, 6.8
    */
   calculatePerformanceRating(metric, value) {
-    if (value === null || value === undefined) return 'unknown'
+    if (value === null || value === undefined) {
+      return 'unknown'
+    }
 
     const thresholds = {
       lcp: { good: 2500, poor: 4000 }, // LCP < 2500ms is good
@@ -328,10 +352,16 @@ export class PerformanceMonitor {
     }
 
     const threshold = thresholds[metric]
-    if (!threshold) return 'unknown'
+    if (!threshold) {
+      return 'unknown'
+    }
 
-    if (value <= threshold.good) return 'good'
-    if (value <= threshold.poor) return 'needs-improvement'
+    if (value <= threshold.good) {
+      return 'good'
+    }
+    if (value <= threshold.poor) {
+      return 'needs-improvement'
+    }
     return 'poor'
   }
 

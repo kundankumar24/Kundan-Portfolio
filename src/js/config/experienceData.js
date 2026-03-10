@@ -42,7 +42,7 @@ export const experienceData = {
     },
     {
       id: 'exp-3',
-      company: 'EY Global Delivery Services - Next Gen Employability Program Edunef Foundation',
+      company: 'EY Global Delivery Services - Next Gen Employability Program Edunet Foundation',
       position: 'Full Stack Web Development Intern',
       startDate: new Date('2024-02-01'),
       endDate: new Date('2024-04-30'),
@@ -59,7 +59,7 @@ export const experienceData = {
     },
     {
       id: 'exp-4',
-      company: 'Edunef Foundation - IBM Collaboration',
+      company: 'Edunet Foundation - IBM Collaboration',
       position: 'Software Engineer Intern (AI & Cloud)',
       startDate: new Date('2024-02-01'),
       endDate: new Date('2024-03-31'),
@@ -85,7 +85,7 @@ export const experienceData = {
       startDate: new Date('2022-11-01'),
       endDate: new Date('2026-06-30'),
       grade: 'CGPA: 8.0',
-      location: 'Hazaribagh, Jharkhand',
+      location: 'Hazaribag, Jharkhand',
       description: 'Pursuing Bachelor of Technology in Computer Science and Engineering with focus on AI, Machine Learning, and Full-Stack Development.',
       achievements: [
         'Maintained 8.0 CGPA throughout the program',
@@ -97,7 +97,7 @@ export const experienceData = {
     },
     {
       id: 'edu-2',
-      institution: 'GHAKAMAL SARASWATI VIDYA MANDIR',
+      institution: 'RAJKAMAL SARASWATI VIDYA MANDIR',
       degree: 'Intermediate',
       field: 'Science',
       startDate: new Date('2019-04-01'),
@@ -175,14 +175,14 @@ export function getAllExperiences() {
  */
 export function getExperiencesByType(type) {
   switch (type) {
-    case 'work':
-      return experienceData.workExperience
-    case 'education':
-      return experienceData.education
-    case 'volunteer':
-      return experienceData.volunteer
-    default:
-      return []
+  case 'work':
+    return experienceData.workExperience
+  case 'education':
+    return experienceData.education
+  case 'volunteer':
+    return experienceData.volunteer
+  default:
+    return []
   }
 }
 
@@ -200,7 +200,9 @@ export function getCurrentExperiences() {
  * @returns {string} Formatted date
  */
 export function formatDate(date) {
-  if (!date) return 'Present'
+  if (!date) {
+    return 'Present'
+  }
   
   const options = { year: 'numeric', month: 'short' }
   return date.toLocaleDateString('en-US', options)
