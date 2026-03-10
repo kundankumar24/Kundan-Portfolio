@@ -63,6 +63,16 @@ export default defineConfig(({ mode }) => {
           }
         : undefined,
       rollupOptions: {
+        input: {
+          main: resolve(__dirname, 'index.html'),
+          about: resolve(__dirname, 'about.html'),
+          skills: resolve(__dirname, 'skills.html'),
+          projects: resolve(__dirname, 'projects.html'),
+          experience: resolve(__dirname, 'experience.html'),
+          education: resolve(__dirname, 'education.html'),
+          contact: resolve(__dirname, 'contact.html'),
+          cvDownload: resolve(__dirname, 'cv-download.html'),
+        },
         output: {
           manualChunks: {
             // Split vendor code
