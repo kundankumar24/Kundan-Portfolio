@@ -52,22 +52,6 @@ npm test
 npm run build
 ```
 
-### Backend Setup
-
-```bash
-# Build all workspace members
-cargo build
-
-# Run the API server
-cargo run -p portfolio-api
-
-# Run tests
-cargo test
-
-# Run property-based tests
-cargo test --features proptest
-```
-
 ## Development
 
 ### Frontend Development
@@ -91,24 +75,6 @@ npm run lint:fix
 npm run format
 ```
 
-### Backend Development
-
-```bash
-# Run API server in development
-cargo run -p portfolio-api
-
-# Run tests for specific package
-cargo test -p portfolio-models
-cargo test -p portfolio-core
-
-# Check code
-cargo check
-cargo clippy
-
-# Format code
-cargo fmt
-```
-
 ## Testing
 
 ### Frontend Testing
@@ -117,12 +83,6 @@ cargo fmt
 - **Property-Based Tests**: Fast-check for universal properties
 - **Coverage**: Run `npm run test:coverage`
 
-### Backend Testing
-
-- **Unit Tests**: Standard Rust test framework
-- **Property-Based Tests**: Proptest for data validation
-- **Integration Tests**: API endpoint testing
-
 ## Build and Deployment
 
 ### Production Build
@@ -130,9 +90,6 @@ cargo fmt
 ```bash
 # Frontend build
 npm run build
-
-# Backend build (optimized)
-cargo build --release
 ```
 
 ### Build Validation
@@ -162,11 +119,6 @@ npm run ci
 - **Vitest**: `vitest.config.js` - Test configuration
 - **ESLint**: `eslint.config.js` - Code quality rules
 - **Prettier**: `.prettierrc` - Code formatting
-
-### Backend Configuration
-
-- **Workspace**: `Cargo.toml` - Workspace and dependency management
-- **API Server**: `backend/api/Cargo.toml` - API service configuration
 
 ## Performance Targets
 
@@ -204,14 +156,6 @@ npm run ci
 ## License
 
 MIT License - see LICENSE file for details
-
-## Documentation
-
-- [Deployment Guide](DEPLOYMENT.md)
-- [Integration Guide](INTEGRATION_GUIDE.md)
-- [Analytics Implementation](ANALYTICS_IMPLEMENTATION.md)
-- [Performance Monitoring](PERFORMANCE_MONITOR_IMPLEMENTATION.md)
-- [SEO Engine](SEO_ENGINE_IMPLEMENTATION.md)
 
 ## Support
 
