@@ -5,6 +5,39 @@
 
 export const projectsData = [
   {
+    id: 'advanced-ai-chatbot',
+    title: 'Advanced AI Chatbot | Gemini-Powered AI Assistant',
+    description: 'Multi-functional AI chatbot integrated with Google Gemini, enabling conversational AI, web search, image analysis, voice interaction, and prompt-based workflows',
+    longDescription: 'Developed a multi-functional AI chatbot integrated with Google Gemini, enabling conversational AI, web search, image analysis, voice interaction, and prompt-based workflows. Built modular features including Utilities Hub, Detective Cases, Offline Games, Fun Zone, and Live Updates, creating an all-in-one AI platform beyond standard chatbot functionality. Designed a responsive, interactive UI with quick prompts, templates, model controls, image uploads, and reusable components, and deployed the application on Vercel.',
+    technologies: [
+      { name: 'JavaScript', category: 'Language', icon: 'javascript' },
+      { name: 'Google Gemini API', category: 'API', icon: 'gemini' },
+      { name: 'HTML', category: 'Language', icon: 'html' },
+      { name: 'CSS', category: 'Language', icon: 'css' },
+      { name: 'REST APIs', category: 'Technology', icon: 'api' }
+    ],
+    images: [],
+    liveUrl: 'https://advanced-chatbot-gold.vercel.app/',
+    githubUrl: 'https://github.com/kundankumar24/advanced-ai-chatbot',
+    caseStudy: {
+      problem: 'Users need a versatile AI assistant that goes beyond simple Q&A to offer tools, games, and real-time updates in one platform',
+      solution: 'Built a modular Gemini-powered chatbot with multi-modal capabilities including voice, image analysis, and web search integrated into a single interactive UI',
+      process: [
+        'Integrated Google Gemini API for conversational AI and multi-modal support',
+        'Built modular feature hubs: Utilities, Detective Cases, Offline Games, Fun Zone, and Live Updates',
+        'Designed responsive UI with quick prompts, templates, and model controls',
+        'Deployed on Vercel with optimized performance'
+      ],
+      results: 'Delivered an all-in-one AI platform with conversational AI, voice interaction, image analysis, and real-time web search capabilities'
+    },
+    featured: true,
+    category: 'AI/ML',
+    dateCompleted: new Date('2025-08-01'),
+    metrics: {
+      other: 'Multi-modal AI with voice, image & web search'
+    }
+  },
+  {
     id: 'predictive-transaction-intelligence',
     title: 'Predictive Transaction Intelligence BFSI',
     description: 'AI-driven financial analytics system for banking transaction pattern analysis and fraud detection',

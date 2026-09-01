@@ -9,9 +9,10 @@
     .cv-download-section {
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      justify-content: flex-start;
+      padding: 4rem 2rem 4rem;
     }
     .cv-download-container {
       max-width: 600px;
@@ -92,6 +93,76 @@
       </div>
 
       <a href="/" class="back-link">← Back to Portfolio</a>
+    </div>
+
+    <!-- CV Preview Section -->
+    <div style="max-width: 860px; width: 100%; margin: 2rem auto 0; text-align: left;">
+      <h2 style="text-align: center; color: var(--color-text-primary); margin-bottom: 2rem; font-size: 1.75rem; font-weight: 700;">CV Highlights</h2>
+
+      <!-- Projects -->
+      <section style="margin-bottom: 2.5rem;">
+        <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-primary, #6366f1); border-bottom: 2px solid var(--color-primary, #6366f1); padding-bottom: 0.5rem; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em;">Projects</h3>
+
+        <div style="background: var(--color-surface); border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 4px solid #6366f1;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--color-text-primary); margin: 0;">Advanced AI Chatbot | Gemini-Powered AI Assistant</h4>
+            <a href="https://advanced-chatbot-gold.vercel.app/" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: #6366f1; text-decoration: none; white-space: nowrap;">🔗 Live Demo</a>
+          </div>
+          <ul style="margin: 0.75rem 0 0; padding-left: 1.25rem; color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7;">
+            <li>Developed a multi-functional AI chatbot integrated with Google Gemini, enabling conversational AI, web search, image analysis, voice interaction, and prompt-based workflows.</li>
+            <li>Built modular features including Utilities Hub, Detective Cases, Offline Games, Fun Zone, and Live Updates — an all-in-one AI platform beyond standard chatbot functionality.</li>
+            <li>Designed a responsive, interactive UI with quick prompts, templates, model controls, image uploads, and reusable components; deployed on Vercel.</li>
+          </ul>
+          <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+            <span style="background: rgba(99,102,241,0.1); color: #6366f1; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">JavaScript</span>
+            <span style="background: rgba(99,102,241,0.1); color: #6366f1; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Google Gemini API</span>
+            <span style="background: rgba(99,102,241,0.1); color: #6366f1; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">HTML</span>
+            <span style="background: rgba(99,102,241,0.1); color: #6366f1; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">CSS</span>
+            <span style="background: rgba(99,102,241,0.1); color: #6366f1; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">REST APIs</span>
+          </div>
+        </div>
+
+        <div style="background: var(--color-surface); border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 4px solid #8b5cf6;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--color-text-primary); margin: 0;">Predictive Transaction Intelligence BFSI</h4>
+            <a href="https://predictive-transaction-intelligence-iota.vercel.app/" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: #6366f1; text-decoration: none; white-space: nowrap;">🔗 Live Demo</a>
+          </div>
+          <ul style="margin: 0.75rem 0 0; padding-left: 1.25rem; color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7;">
+            <li>Built an AI-driven financial analytics system using Python, TensorFlow, and Scikit-learn to analyze banking transaction patterns.</li>
+            <li>Developed machine learning models for predictive analytics, improving fraud detection capability and transaction analysis accuracy.</li>
+            <li>Implemented backend APIs using Flask/FastAPI and integrated PostgreSQL database, enabling secure and scalable transaction data processing.</li>
+          </ul>
+          <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+            <span style="background: rgba(139,92,246,0.1); color: #8b5cf6; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Python</span>
+            <span style="background: rgba(139,92,246,0.1); color: #8b5cf6; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">TensorFlow</span>
+            <span style="background: rgba(139,92,246,0.1); color: #8b5cf6; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Scikit-learn</span>
+            <span style="background: rgba(139,92,246,0.1); color: #8b5cf6; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">FastAPI</span>
+            <span style="background: rgba(139,92,246,0.1); color: #8b5cf6; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div style="background: var(--color-surface); border-radius: 10px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.08); border-left: 4px solid #ec4899;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem;">
+            <h4 style="font-size: 1.05rem; font-weight: 700; color: var(--color-text-primary); margin: 0;">DronAI Website — AI &amp; Robotics Platform</h4>
+            <a href="https://dron-ai-lyart.vercel.app/" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: #6366f1; text-decoration: none; white-space: nowrap;">🔗 Live Demo</a>
+          </div>
+          <ul style="margin: 0.75rem 0 0; padding-left: 1.25rem; color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7;">
+            <li>Designed and developed an AI and Robotics program website enabling students to explore courses and enroll in training programs.</li>
+            <li>Created UI/UX prototypes in Figma and implemented responsive frontend using React, improving website usability and navigation.</li>
+            <li>Built scalable frontend components allowing students to access workshops and program details efficiently.</li>
+          </ul>
+          <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.4rem;">
+            <span style="background: rgba(236,72,153,0.1); color: #ec4899; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">React</span>
+            <span style="background: rgba(236,72,153,0.1); color: #ec4899; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">Figma</span>
+            <span style="background: rgba(236,72,153,0.1); color: #ec4899; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">JavaScript</span>
+            <span style="background: rgba(236,72,153,0.1); color: #ec4899; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;">CSS</span>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <a href="/projects.html" style="color: var(--color-primary, #6366f1); font-weight: 600; text-decoration: none; font-size: 0.95rem;">View all projects →</a>
+        </div>
+      </section>
     </div>
   </section>
 
